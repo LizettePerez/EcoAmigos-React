@@ -51,10 +51,10 @@ export default function Example() {
           <a href="#recycle" className="text-sm leading-6 custom-a">
             Reciclaje
           </a>
-          <a href="#" className="text-sm leading-6 custom-a">
+          <a href="#event" className="text-sm leading-6 custom-a">
             Eventos
           </a>
-          <a href="#" className="text-sm leading-6 custom-a">
+          <a href="#contact" className="text-sm leading-6 custom-a">
             Contacto
           </a>
         </Popover.Group>
@@ -101,13 +101,13 @@ export default function Example() {
                   Reciclaje
                 </a>
                 <a
-                  href="#"
+                  href="#event"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-sm leading-6 custom-a"
                 >
                   Eventos
                 </a>
                 <a
-                  href="#"
+                  href="#contact"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-sm leading-6 custom-a"
                 >
                   Contacto
