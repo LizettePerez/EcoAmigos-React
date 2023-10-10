@@ -7,7 +7,7 @@ function Reciclaje() {
   return (
     <div>
       <section className="recycle" id="recycle">
-        <h2 className="recycleTitle titulo">Reciclaje <span className="green">Responsable</span></h2>
+        <h2 className="titleCenter titulo">Reciclaje <span className="green">Responsable</span></h2>
         <section className="recycleContainer">
           <div className="recycleBox">
             <img src={PlasticImg} alt="plastic" className="recycleImg" />

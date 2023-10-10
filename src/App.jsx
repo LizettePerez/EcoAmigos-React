@@ -4,6 +4,7 @@ import Header from './components/Header'
 import 'tailwindcss/tailwind.css';
 import './index.css';
 import Reciclaje from './components/Reciclaje';
+import Eventos from './components/Eventos';
 
 function App() {
 
@@ -13,6 +14,7 @@ function App() {
       <main>
         <Bienvenida />
         <Reciclaje />
+        <Eventos />
       </main>
 
     </>
