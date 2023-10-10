@@ -1,12 +1,10 @@
 import './App.css'
-import Bienvenida from './components/Bienvenida';
 import Header from './components/Header'
 import 'tailwindcss/tailwind.css';
 import './index.css';
-import Reciclaje from './components/Reciclaje';
-import Eventos from './components/Eventos';
-import Contacto from './components/contacto';
 import { Footer } from './components/Footer';
+import { Route, Routes } from 'react-router-dom';
+import Home from './pages/Home'
 
 function App() {
 
@@ -14,10 +12,9 @@ function App() {
     <>
       <Header />
       <main>
-        <Bienvenida />
-        <Reciclaje />
-        <Eventos />
-        <Contacto />
+        <Routes>
+          <Route path='/' element={<Home />} />
+        </Routes>
       </main>
       < Footer />
 
