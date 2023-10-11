@@ -5,6 +5,7 @@ import './index.css';
 import { Footer } from './components/Footer';
 import { Route, Routes } from 'react-router-dom';
 import Home from './pages/Home'
+import Comunidad from './pages/Comunidad'
 
 function App() {
 
@@ -14,6 +15,7 @@ function App() {
       <main>
         <Routes>
           <Route path='/' element={<Home />} />
+          <Route path='/Comunidad' element={<Comunidad />} />
         </Routes>
       </main>
       < Footer />

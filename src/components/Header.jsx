@@ -1,6 +1,7 @@
 import Logo from '../assets/logo.png';
 import { Fragment, useState } from 'react';
 import { Dialog, Popover, Transition } from '@headlessui/react';
+
 import {
   Bars3Icon,
   XMarkIcon,
@@ -8,13 +9,14 @@ import {
 import '../index.css';
 
 export default function Example() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
 
   return (
     <header>
       <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
         <div className="flex lg:flex-1">
-          <a href="#" className="-m-1.5 p-1.5">
+          <a href="/#inicio" className="-m-1.5 p-1.5">
             <span className="sr-only">EcoAmigos</span>
             <img className="h-8 w-auto" src={Logo} alt="logo" />
           </a>
@@ -45,21 +47,21 @@ export default function Example() {
             </Transition>
           </Popover>
 
-          <a href="#home" className="text-sm leading-6  custom-active">
+          <a href="/#inicio" className="text-sm leading-6  custom-active">
             Inicio
           </a>
-          <a href="#recycle" className="text-sm leading-6 custom-a">
+          <a href="/#reciclaje" className="text-sm leading-6 custom-a">
             Reciclaje
           </a>
-          <a href="#event" className="text-sm leading-6 custom-a">
+          <a href="/#eventos" className="text-sm leading-6 custom-a">
             Eventos
           </a>
-          <a href="#contact" className="text-sm leading-6 custom-a">
+          <a href="/#contacto" className="text-sm leading-6 custom-a">
             Contacto
           </a>
         </Popover.Group>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <a href="#" className="text-sm leading-6 custom-a">
+          <a href="/comunidad" className="text-sm leading-6 custom-a">
             Iniciar Sesión <span aria-hidden="true">&rarr;</span>
           </a>
         </div>
@@ -68,7 +70,7 @@ export default function Example() {
         <div className="fixed inset-0 z-10" />
         <Dialog.Panel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">
-            <a href="#" className="-m-1.5 p-1.5">
+            <a href="/#inicio" className="-m-1.5 p-1.5">
               <span className="sr-only">Open user menu</span>
               <img
                 className="h-8 w-auto"
@@ -89,25 +91,25 @@ export default function Example() {
             <div className="-my-6 divide-y divide-gray-500/10">
               <div className="space-y-2 py-6">
                 <a
-                  href="#home"
+                  href="/#inicio"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-sm leading-6 custom-a custom-active"
                 >
                   Inicio
                 </a>
                 <a
-                  href="#recycle"
+                  href="/#reciclaje"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-sm leading-6 custom-a"
                 >
                   Reciclaje
                 </a>
                 <a
-                  href="#event"
+                  href="/#eventos"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-sm leading-6 custom-a"
                 >
                   Eventos
                 </a>
                 <a
-                  href="#contact"
+                  href="/#contacto"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-sm leading-6 custom-a"
                 >
                   Contacto
@@ -115,7 +117,7 @@ export default function Example() {
               </div>
               <div className="py-6">
                 <a
-                  href="#"
+                  href="/comunidad"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-sm leading-6 custom-a"
                 >
                   Iniciar Sesión

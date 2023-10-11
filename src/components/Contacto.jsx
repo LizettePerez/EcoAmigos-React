@@ -10,7 +10,7 @@ export default function Contacto() {
           <section className="contactImg">
             <img src={ContactImg} alt="contactImg" className="imgAside" />
           </section>
-          <section className="contactForm" id="contact">
+          <section className="contactForm" id="contacto">
             <FormContact />
           </section>
         </div>
