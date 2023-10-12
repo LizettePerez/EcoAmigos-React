@@ -5,7 +5,6 @@ import circle from "../assets/Sin título-45.png";
 function Bienvenida() {
   return (
     <div>
-      <div>Holi crayoli</div>
       <img src={circle} alt="circleTitle" className="circleTitle"></img>
       <div className="container" id="home">
         <section className=" homeText">
