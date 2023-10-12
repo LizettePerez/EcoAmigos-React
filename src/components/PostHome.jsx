@@ -1,12 +1,12 @@
 import '../index.css';
 
-function LoginRegister() {
+function PostHome() {
 
   return (
     <div>
-      
+
     </div>
   );
 }
 
-export default LoginRegister;
+export default PostHome;
