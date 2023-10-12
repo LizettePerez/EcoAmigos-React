@@ -6,7 +6,7 @@ import PlasticImg from '../assets/plastic.png';
 function Reciclaje() {
   return (
     <div>
-      <section className="recycle" id="recycle">
+      <section className="recycle" id="reciclaje">
         <h2 className="titleCenter titulo">Reciclaje <span className="green">Responsable</span></h2>
         <section className="recycleContainer">
           <div className="recycleBox">

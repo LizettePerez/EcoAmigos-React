@@ -7,7 +7,7 @@ function Eventos() {
     <div>
       <section className="event">
         <div className="eventContainer">
-          <section className="eventBody" id="event">
+          <section className="eventBody" id="eventos">
             <h2 className='titulo titleCenter'>Evento de Limpieza <br /><span className="green">&quot;Playa Limpia en Valparaíso&quot;</span></h2>
             <p>¡Únete a la comunidad EcoAmigos y sé parte del cambio!<br /> Te invitamos a participar en nuestro emocionante
               evento de limpieza de playa en Valparaíso, Chile.</p>
