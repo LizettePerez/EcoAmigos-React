@@ -1,5 +1,5 @@
 import '../index.css';
-import Login from '../components/Login';
+import LoginGoogle from '../components/LoginGoogle';
 import CommunityImg from '../assets/community.png';
 
 function Comunidad() {
@@ -10,7 +10,7 @@ function Comunidad() {
           <img src={CommunityImg} alt="communityImg" className="communityImg imgAside" />
         </section>
         <section className="formCommunity">
-          <Login />
+          <LoginGoogle />
         </section>
 
       </section>

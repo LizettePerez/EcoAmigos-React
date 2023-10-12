@@ -2,7 +2,7 @@
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 import { GoogleAuthProvider } from "firebase/auth";
-
+import { signInWithPopup } from 'firebase/auth';
 
 
 // TODO: Add SDKs for Firebase products that you want to use
@@ -18,13 +18,18 @@ const firebaseConfig = {
   appId: "1:733853918959:web:414181453ad616d2af5d1a"
 };
 
+const provider = new GoogleAuthProvider();
+
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-export const auth = getAuth(app);
-auth.languageCode = 'it';
+const auth = getAuth(app);
+auth.languageCode = 'es';
+signInWithPopup(auth, provider);
 
-const provider = new GoogleAuthProvider();
+
 provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
 
+
+export { auth, provider, signInWithPopup };
 
 
