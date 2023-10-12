@@ -16,8 +16,8 @@ function App() {
       <main>
         <Routes>
           <Route path='/' element={<Home />} />
-          <Route path='/Comunidad' element={<Comunidad />} />
-          <Route path='/Post' element={<Post />} />
+          <Route path='/comunidad' element={<Comunidad />} />
+          <Route path='/post' element={<Post />} />
         </Routes>
       </main>
       < Footer />
