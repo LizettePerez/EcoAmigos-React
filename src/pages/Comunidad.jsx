@@ -1,21 +1,12 @@
-import '../index.css';
-import LoginGoogle from '../components/LoginGoogle';
-import CommunityImg from '../assets/community.png';
+import "../index.css";
+import PostHome from "../components/PostHome";
 
 function Comunidad() {
   return (
     <div>
-      <section className="container communityContainer">
-        <section className="communityImg">
-          <img src={CommunityImg} alt="communityImg" className="communityImg imgAside" />
-        </section>
-        <section className="formCommunity">
-          <LoginGoogle />
-        </section>
-
-      </section>
+      <PostHome />
     </div>
-  )
+  );
 }
 
-export default Comunidad
+export default Comunidad;

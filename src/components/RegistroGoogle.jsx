@@ -25,7 +25,7 @@ function RegistroGoogle() {
       <button
         onClick={registerWithGoogle}
         type="button"
-        class="login-with-google-btn"
+        className="login-with-google-btn"
       >
         Registrarse con Google
       </button>

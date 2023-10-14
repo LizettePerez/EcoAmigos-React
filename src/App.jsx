@@ -6,7 +6,6 @@ import { Footer } from "./components/Footer";
 import { Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import Comunidad from "./pages/Comunidad";
-import Post from "./pages/Post";
 import Eventos from "./pages/Eventos";
 import Contact from "./pages/Contacto";
 
@@ -18,7 +17,6 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/comunidad" element={<Comunidad />} />
-          <Route path="/post" element={<Post />} />
           <Route path="/eventos" element={<Eventos />} />
           <Route path="/contacto" element={<Contact />} />
         </Routes>

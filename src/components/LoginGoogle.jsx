@@ -46,14 +46,12 @@ function LoginGoogle() {
             <button
               onClick={signInWithGoogle}
               type="button"
-              class="login-with-google-btn"
+              className="login-with-google-btn"
             >
               Iniciar sesión con Google
             </button>
             <RegistroGoogle />
           </div>
-          {/* <button onClick={signInWithGoogle}>Iniciar sesión con Google</button>
-          <RegistroGoogle />  */}
         </section>
       </section>
     </div>
