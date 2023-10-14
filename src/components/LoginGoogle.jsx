@@ -1,9 +1,9 @@
-import '../index.css';
-import { auth, provider, signInWithPopup } from '../api/firebase.config';
-import { GoogleAuthProvider } from 'firebase/auth';
-import RegistroGoogle from './RegistroGoogle';
-import { useNavigate } from 'react-router-dom';
-
+import "../index.css";
+import { auth, provider, signInWithPopup } from "../api/firebase.config";
+import { GoogleAuthProvider } from "firebase/auth";
+import CommunityImg from "../assets/community.png";
+import RegistroGoogle from "./RegistroGoogle";
+import { useNavigate } from "react-router-dom";
 
 function LoginGoogle() {
   const navigate = useNavigate();
@@ -15,11 +15,11 @@ function LoginGoogle() {
 
         const user = result.user;
 
-        console.log('Token de acceso de Google:', token);
+        console.log("Token de acceso de Google:", token);
         //localStorage... //reverse
-        console.log('Usuario autenticado:', user);
+        console.log("Usuario autenticado:", user);
 
-        navigate.push('/post');
+        navigate.push("/post");
       })
       .catch((error) => {
         const errorCode = error.code;
@@ -27,16 +27,26 @@ function LoginGoogle() {
 
         const email = error.customData.email;
         const credential = GoogleAuthProvider.credentialFromError(error);
-        console.error('Error:', errorCode, errorMessage, credential, email);
+        console.error("Error:", errorCode, errorMessage, credential, email);
       });
   };
 
   return (
     <div>
-      <button onClick={signInWithGoogle}>Iniciar sesión con Google</button>
-      < RegistroGoogle />
+      <section className="container communityContainer" id="login">
+        <section className="communityImg">
+          <img
+            src={CommunityImg}
+            alt="communityImg"
+            className="communityImg imgAside"
+          />
+        </section>
+        <section className="formCommunity">
+          <button onClick={signInWithGoogle}>Iniciar sesión con Google</button>
+          <RegistroGoogle />
+        </section>
+      </section>
     </div>
-
   );
 }
 
