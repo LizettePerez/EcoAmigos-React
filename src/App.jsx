@@ -7,6 +7,7 @@ import { Route, Routes } from 'react-router-dom';
 import Home from './pages/Home'
 import Comunidad from './pages/Comunidad'
 import Post from './pages/Post'
+import Eventos from './pages/Eventos';
 
 function App() {
 
@@ -18,10 +19,10 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='/comunidad' element={<Comunidad />} />
           <Route path='/post' element={<Post />} />
+          <Route path='/eventos' element={<Eventos />} />
         </Routes>
       </main>
       < Footer />
-
     </>
   )
 }

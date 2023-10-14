@@ -3,7 +3,6 @@ import { Fragment, useState } from 'react';
 import { Dialog, Popover, Transition } from '@headlessui/react';
 import { Link } from 'react-router-dom';
 
-
 import {
   Bars3Icon,
   XMarkIcon,
@@ -55,7 +54,7 @@ export default function Example() {
           <Link to="/#reciclaje" className="text-sm leading-6 custom-a">
             Reciclaje
           </Link>
-          <Link to="/#eventos" className="text-sm leading-6 custom-a">
+          <Link to="/eventos" className="text-sm leading-6 custom-a">
             Eventos
           </Link>
           <Link to="/#contacto" className="text-sm leading-6 custom-a">
@@ -102,7 +101,7 @@ export default function Example() {
                 >
                   Reciclaje
                 </Link>
-                <Link to="/#eventos"
+                <Link to="/eventos"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-sm leading-6 custom-a"
                 >
                   Eventos

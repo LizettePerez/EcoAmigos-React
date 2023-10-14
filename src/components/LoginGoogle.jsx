@@ -16,6 +16,7 @@ function LoginGoogle() {
         const user = result.user;
 
         console.log('Token de acceso de Google:', token);
+        //localStorage... //reverse
         console.log('Usuario autenticado:', user);
 
         navigate.push('/post');
