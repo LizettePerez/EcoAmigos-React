@@ -1,5 +1,5 @@
-import '../index.css';
-import { auth, signInWithPopup, provider } from '../api/firebase.config';
+import "../index.css";
+import { auth, signInWithPopup, provider } from "../api/firebase.config";
 import { useNavigate } from "react-router-dom";
 
 function RegistroGoogle() {
@@ -9,21 +9,31 @@ function RegistroGoogle() {
       .then((result) => {
         const user = result.user;
         const token = user.stsTokenManager.accessToken;
-        console.log('Token de acceso de Google:', token);
-        console.log('Usuario registrado y autenticado:', user);
-        navigate.push('/post');
+        console.log("Token de acceso de Google:", token);
+        console.log("Usuario registrado y autenticado:", user);
+        navigate.push("/post");
       })
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
-        console.error('Error:', errorCode, errorMessage);
+        console.error("Error:", errorCode, errorMessage);
       });
   };
 
   return (
     <div>
-      <button onClick={registerWithGoogle}>Registrarse con Google</button>
+      <button
+        onClick={registerWithGoogle}
+        type="button"
+        class="login-with-google-btn"
+      >
+        Registrarse con Google
+      </button>
     </div>
+
+    /* <div>
+      <button onClick={registerWithGoogle}>Registrarse con Google</button>
+    </div> */
   );
 }
 
