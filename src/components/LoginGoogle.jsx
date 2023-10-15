@@ -1,9 +1,11 @@
 import "../index.css";
-import { auth, provider, signInWithPopup } from "../api/firebase.config";
-import { GoogleAuthProvider } from "firebase/auth";
+import { auth, provider } from "../api/firebase.config";
 import CommunityImg from "../assets/community.png";
 import RegistroGoogle from "./RegistroGoogle";
 import { useNavigate } from "react-router-dom";
+
+import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+
 
 function LoginGoogle() {
   const navigate = useNavigate();
@@ -16,10 +18,10 @@ function LoginGoogle() {
         const user = result.user;
 
         console.log("Token de acceso de Google:", token);
-        //localStorage... //reverse
+        //localStorage... 
         console.log("Usuario autenticado:", user);
 
-        navigate.push("/post");
+        navigate.push('/comunidad');
       })
       .catch((error) => {
         const errorCode = error.code;

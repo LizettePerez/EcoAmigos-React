@@ -1,6 +1,8 @@
 import "../index.css";
-import { auth, signInWithPopup, provider } from "../api/firebase.config";
+import { auth, provider } from "../api/firebase.config";
 import { useNavigate } from "react-router-dom";
+import { signInWithPopup } from "firebase/auth";
+
 
 function RegistroGoogle() {
   const navigate = useNavigate();
@@ -9,9 +11,18 @@ function RegistroGoogle() {
       .then((result) => {
         const user = result.user;
         const token = user.stsTokenManager.accessToken;
+        const name = result.user.displayName;
+        const profilePic = result.user.photoURL;
+
+
         console.log("Token de acceso de Google:", token);
         console.log("Usuario registrado y autenticado:", user);
-        navigate.push("/post");
+
+        localStorage.setItem("token", token);
+        localStorage.setItem("name", name);
+        localStorage.setItem("profilePic", profilePic);
+
+        navigate.push('/comunidad');
       })
       .catch((error) => {
         const errorCode = error.code;
@@ -30,10 +41,6 @@ function RegistroGoogle() {
         Registrarse con Google
       </button>
     </div>
-
-    /* <div>
-      <button onClick={registerWithGoogle}>Registrarse con Google</button>
-    </div> */
   );
 }
 
