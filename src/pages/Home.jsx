@@ -1,19 +1,17 @@
-import Bienvenida from '../components/Bienvenida';
-import 'tailwindcss/tailwind.css';
-import '../index.css';
-import Reciclaje from '../components/Reciclaje';
-import Eventos from '../components/Eventos';
-import Contacto from '../components/contacto';
+import Bienvenida from "../components/Bienvenida";
+import "tailwindcss/tailwind.css";
+import "../index.css";
+import Reciclaje from "../components/Reciclaje";
+import LoginGoogle from "../components/LoginGoogle";
 
 function Home() {
   return (
     <>
       <Bienvenida />
+      <LoginGoogle />
       <Reciclaje />
-      <Eventos />
-      <Contacto />
     </>
-  )
+  );
 }
 
 export default Home;
