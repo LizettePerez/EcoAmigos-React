@@ -46,11 +46,8 @@ export default function Example() {
             </Transition>
           </Popover>
 
-          <Link to="/#inicio" className="text-sm leading-6  custom-active">
+          <Link to="/" className="text-sm leading-6  custom-active">
             Inicio
-          </Link>
-          <Link to="/#reciclaje" className="text-sm leading-6 custom-a">
-            Reciclaje
           </Link>
           <Link to="/eventos" className="text-sm leading-6 custom-a">
             Eventos
@@ -91,16 +88,10 @@ export default function Example() {
             <div className="-my-6 divide-y divide-gray-500/10">
               <div className="space-y-2 py-6">
                 <Link
-                  to="/#inicio"
+                  to="/"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-sm leading-6 custom-a custom-active"
                 >
                   Inicio
-                </Link>
-                <Link
-                  to="/#reciclaje"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-sm leading-6 custom-a"
-                >
-                  Reciclaje
                 </Link>
                 <Link
                   to="/eventos"

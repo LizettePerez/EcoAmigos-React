@@ -1,8 +1,7 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getAuth } from "firebase/auth";
-import { GoogleAuthProvider } from "firebase/auth";
-import { signInWithPopup } from 'firebase/auth';
+import { getAuth, GoogleAuthProvider } from "firebase/auth";
+
 
 
 // TODO: Add SDKs for Firebase products that you want to use
@@ -24,12 +23,11 @@ const provider = new GoogleAuthProvider();
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 auth.languageCode = 'es';
-signInWithPopup(auth, provider);
 
 
 provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
 
 
-export { auth, provider, signInWithPopup };
+export { auth, provider };
 
 
