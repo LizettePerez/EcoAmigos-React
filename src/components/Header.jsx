@@ -1,7 +1,7 @@
+import { Link, NavLink } from "react-router-dom";
 import Logo from "../assets/logo.png";
 import { Fragment, useState } from "react";
 import { Dialog, Popover, Transition } from "@headlessui/react";
-import { Link } from "react-router-dom";
 
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import "../index.css";
@@ -16,10 +16,10 @@ export default function Example() {
         aria-label="Global"
       >
         <div className="flex lg:flex-1">
-          <a href="/#inicio" className="-m-1.5 p-1.5">
+          <Link to="/" className="-m-1.5 p-1.5">
             <span className="sr-only">EcoAmigos</span>
             <img className="h-8 w-auto" src={Logo} alt="logo" />
-          </a>
+          </Link>
         </div>
         <div className="flex lg:hidden">
           <button
@@ -46,20 +46,20 @@ export default function Example() {
             </Transition>
           </Popover>
 
-          <Link to="/" className="text-sm leading-6  custom-active">
+          <NavLink to="/" className="text-m leading-6">
             Inicio
-          </Link>
-          <Link to="/eventos" className="text-sm leading-6 custom-a">
+          </NavLink>
+          <NavLink to="/eventos" className="text-m leading-6">
             Eventos
-          </Link>
-          <Link to="/contacto" className="text-sm leading-6 custom-a">
+          </NavLink>
+          <NavLink to="/contacto" className="text-m leading-6">
             Contacto
-          </Link>
+          </NavLink>
         </Popover.Group>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <Link to="/comunidad" className="text-sm leading-6 custom-a">
+          <NavLink to="/comunidad" className="text-m leading-6 ">
             Iniciar Sesión <span aria-hidden="true">&rarr;</span>
-          </Link>
+          </NavLink>
         </div>
       </nav>
       <Dialog
@@ -71,7 +71,7 @@ export default function Example() {
         <div className="fixed inset-0 z-10" />
         <Dialog.Panel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">
-            <Link to="/#inicio" className="-m-1.5 p-1.5">
+            <Link to="/" className="-m-1.5 p-1.5">
               <span className="sr-only">Open user menu</span>
               <img className="h-8 w-auto" src={Logo} alt="logo" />
             </Link>
@@ -87,32 +87,32 @@ export default function Example() {
           <div className="mt-6 flow-root">
             <div className="-my-6 divide-y divide-gray-500/10">
               <div className="space-y-2 py-6">
-                <Link
+                <NavLink
                   to="/"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-sm leading-6 custom-a custom-active"
                 >
                   Inicio
-                </Link>
-                <Link
+                </NavLink>
+                <NavLink
                   to="/eventos"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-sm leading-6 custom-a"
                 >
                   Eventos
-                </Link>
-                <Link
+                </NavLink>
+                <NavLink
                   to="/contacto"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-sm leading-6 custom-a"
                 >
                   Contacto
-                </Link>
+                </NavLink>
               </div>
               <div className="py-6">
-                <Link
+                <NavLink
                   to="/comunidad"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-sm leading-6 custom-a"
                 >
                   Iniciar Sesión
-                </Link>
+                </NavLink>
               </div>
             </div>
           </div>
