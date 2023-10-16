@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./App.css";
 import Header from "./components/Header";
 import "tailwindcss/tailwind.css";

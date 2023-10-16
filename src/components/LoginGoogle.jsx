@@ -6,7 +6,6 @@ import { useNavigate } from "react-router-dom";
 
 import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 
-
 function LoginGoogle() {
   const navigate = useNavigate();
   const signInWithGoogle = () => {
@@ -18,10 +17,12 @@ function LoginGoogle() {
         const user = result.user;
 
         console.log("Token de acceso de Google:", token);
-        //localStorage... 
+        localStorage.setItem("token", token);
+        localStorage.setItem("name", user.displayName);
+        localStorage.setItem("profilePic", user.photoURL);
         console.log("Usuario autenticado:", user);
 
-        navigate.push('/comunidad');
+        navigate("/comunidad"); //modificar
       })
       .catch((error) => {
         const errorCode = error.code;

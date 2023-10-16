@@ -1,8 +1,8 @@
 import "../index.css";
 import { auth, provider } from "../api/firebase.config";
+//import {connection} from "../api/server" // agregar api mysql""
 import { useNavigate } from "react-router-dom";
 import { signInWithPopup } from "firebase/auth";
-
 
 function RegistroGoogle() {
   const navigate = useNavigate();
@@ -14,7 +14,6 @@ function RegistroGoogle() {
         const name = result.user.displayName;
         const profilePic = result.user.photoURL;
 
-
         console.log("Token de acceso de Google:", token);
         console.log("Usuario registrado y autenticado:", user);
 
@@ -22,7 +21,7 @@ function RegistroGoogle() {
         localStorage.setItem("name", name);
         localStorage.setItem("profilePic", profilePic);
 
-        navigate.push('/comunidad');
+        navigate.push("/comunidad");
       })
       .catch((error) => {
         const errorCode = error.code;
