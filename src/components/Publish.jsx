@@ -2,7 +2,6 @@ import Card from '@mui/material/Card';
 import CardHeader from '@mui/material/CardHeader';
 import CardContent from '@mui/material/CardContent';
 import Avatar from '@mui/material/Avatar';
-import { red } from '@mui/material/colors';
 import Text from './TextArea';
 
 export default function TextArea() {
