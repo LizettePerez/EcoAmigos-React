@@ -1,7 +1,6 @@
 import "../index.css";
 import { auth, provider } from "../api/firebase.config";
 import CommunityImg from "../assets/community.png";
-import RegistroGoogle from "./RegistroGoogle";
 import { useNavigate } from "react-router-dom";
 import axios from 'axios';//luis prueba 
 
@@ -24,7 +23,7 @@ function LoginGoogle() {
         localStorage.setItem("profilePic", user.photoURL);
         console.log("Usuario autenticado:", user);
 
-       
+
         const displayName = user.displayName;
         const email = user.email;
         const photoURL = user.photoURL;
@@ -37,15 +36,15 @@ function LoginGoogle() {
         };
 
         axios.post("http://localhost:8080/usuario/guardar", userData)
-        .then((response) => {
-          console.log("Datos del usuario enviados al backend:", response.data);
-        })
-        .catch((error) => {
-          console.error("Error al enviar datos al backend:", error);
-        });
-        
+          .then((response) => {
+            console.log("Datos del usuario enviados al backend:", response.data);
+          })
+          .catch((error) => {
+            console.error("Error al enviar datos al backend:", error);
+          });
 
-        navigate("/comunidad"); 
+
+        navigate("/comunidad");
       })
       .catch((error) => {
         const errorCode = error.code;
@@ -56,9 +55,9 @@ function LoginGoogle() {
         console.error("Error:", errorCode, errorMessage, credential, email);
       });
   };
- 
 
-  
+
+
   return (
     <div>
       <section className="container communityContainer" id="login">
@@ -78,7 +77,6 @@ function LoginGoogle() {
             >
               Iniciar sesión con Google
             </button>
-            <RegistroGoogle />
           </div>
         </section>
       </section>

@@ -49,8 +49,8 @@ export default function RecipeReviewCard() {
               <MoreVertIcon />
             </IconButton>
           }
-          title="Shrimp and Chorizo Paella"
-          subheader={localStorage.getItem("name")}
+          subheader="September 14, 2016"
+          title={localStorage.getItem("name")}
         />
         {/* <CardMedia
           component="img"

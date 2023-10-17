@@ -2,7 +2,7 @@ import "../index.css";
 import PostHome from "../components/PostHome";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import TextArea from "../components/TextArea";
+import Publish from "../components/Publish";
 
 function Comunidad() {
   const [token, setToken] = useState("");
@@ -18,7 +18,7 @@ function Comunidad() {
   }, []);
   return (
     <div>
-      <TextArea></TextArea>
+      <Publish />
       {token && <PostHome />}
     </div>
   );
