@@ -3,6 +3,8 @@ import { auth, provider } from "../api/firebase.config";
 import CommunityImg from "../assets/community.png";
 import RegistroGoogle from "./RegistroGoogle";
 import { useNavigate } from "react-router-dom";
+import axios from 'axios';//luis prueba 
+
 
 import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 
@@ -22,6 +24,27 @@ function LoginGoogle() {
         localStorage.setItem("profilePic", user.photoURL);
         console.log("Usuario autenticado:", user);
 
+       
+        const displayName = user.displayName;
+        const email = user.email;
+        const photoURL = user.photoURL;
+
+        const userData = {
+          usuarioToken: token,
+          usuarioNombre: displayName,
+          usuarioEmail: email,
+          usuarioImagen: photoURL,
+        };
+
+        axios.post("http://localhost:8080/usuario/guardar", userData)
+        .then((response) => {
+          console.log("Datos del usuario enviados al backend:", response.data);
+        })
+        .catch((error) => {
+          console.error("Error al enviar datos al backend:", error);
+        });
+        //prueba luis 
+
         navigate("/comunidad"); //modificar
       })
       .catch((error) => {
@@ -33,7 +56,9 @@ function LoginGoogle() {
         console.error("Error:", errorCode, errorMessage, credential, email);
       });
   };
+ 
 
+  
   return (
     <div>
       <section className="container communityContainer" id="login">
@@ -60,5 +85,27 @@ function LoginGoogle() {
     </div>
   );
 }
+// caambios prueba luis 
+//const user = firebase.auth().currentUser;
+/*const displayName = user.displayName;
+const email = user.email;
+const photoURL = user.photoURL;
+
+const userData = {
+  name: displayName,
+  email: email,
+  photoURL: photoURL,
+};*/
+
+/*axios.post("http://localhost:8080/usuario/guardar", userData)
+  .then((response) => {
+    console.log("Datos del usuario enviados al backend:", response.data);
+  })
+  .catch((error) => {
+    console.error("Error al enviar datos al backend:", error);
+  });*/
+
+
+
 
 export default LoginGoogle;

@@ -18,4 +18,6 @@ function Comunidad() {
   return <div>{token && <PostHome />}</div>;
 }
 
+
+
 export default Comunidad;
