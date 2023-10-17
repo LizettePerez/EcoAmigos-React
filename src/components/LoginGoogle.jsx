@@ -43,9 +43,9 @@ function LoginGoogle() {
         .catch((error) => {
           console.error("Error al enviar datos al backend:", error);
         });
-        //prueba luis 
+        
 
-        navigate("/comunidad"); //modificar
+        navigate("/comunidad"); 
       })
       .catch((error) => {
         const errorCode = error.code;
@@ -85,27 +85,6 @@ function LoginGoogle() {
     </div>
   );
 }
-// caambios prueba luis 
-//const user = firebase.auth().currentUser;
-/*const displayName = user.displayName;
-const email = user.email;
-const photoURL = user.photoURL;
-
-const userData = {
-  name: displayName,
-  email: email,
-  photoURL: photoURL,
-};*/
-
-/*axios.post("http://localhost:8080/usuario/guardar", userData)
-  .then((response) => {
-    console.log("Datos del usuario enviados al backend:", response.data);
-  })
-  .catch((error) => {
-    console.error("Error al enviar datos al backend:", error);
-  });*/
-
-
 
 
 export default LoginGoogle;
