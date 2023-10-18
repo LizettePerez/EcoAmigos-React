@@ -20,7 +20,7 @@ function LoginGoogle() {
         console.log("Token de acceso de Google:", token);
         localStorage.setItem("token", token);
         localStorage.setItem("name", user.displayName);
-        localStorage.setItem("profilePic", user.photoURL);
+        localStorage.setItem("email", user.email); localStorage.setItem("profilePic", user.photoURL);
         console.log("Usuario autenticado:", user);
 
 
