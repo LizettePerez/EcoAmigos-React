@@ -384,3 +384,10 @@ body {
   align-items: center;
   justify-content: center;
 }
+
+.formEnviado{
+  font-size: 17px;
+  font-weight: 700;
+  color:#055612; 
+
+}
