@@ -2,6 +2,7 @@ import "../index.css";
 import PostHome from "../components/PostHome";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Publish from "../components/Publish";
 
 function Comunidad() {
   const [token, setToken] = useState("");
@@ -15,9 +16,12 @@ function Comunidad() {
     }
     setToken(_token);
   }, []);
-  return <div>{token && <PostHome />}</div>;
+  return (
+    <div>
+      <Publish />
+      {token && <PostHome />}
+    </div>
+  );
 }
-
-
 
 export default Comunidad;
