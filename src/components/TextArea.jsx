@@ -1,64 +1,40 @@
-import { TextareaAutosize as BaseTextareaAutosize } from '@mui/base/TextareaAutosize';
-import { styled } from '@mui/system';
+import React, { useState } from 'react';
+import axios from 'axios';
 
 export default function Text() {
-  const green = {
-    100: '#C1E1A3',
-    200: '#A6D18B',
-    300: '#8BAB6D',
-    400: '#6F864E',
-    500: '#547130',
-    600: '#445D22',
-    700: '#314617',
-    800: '#253A11',
-    900: '#1A2E0B',
-  };
+  const [postText, setPostText] = useState('');
 
-  const grey = {
-    100: '#EAEFF3',
-    200: '#CED5DC',
-    300: '#ABB3C4',
-    400: '#8996AB',
-    500: '#6C7B92',
-    600: '#576278',
-    700: '#434F63',
-    800: '#333E50',
-    900: '#242E3E',
-  };
+  const handlePostTextChange = (e) => {
+    setPostText(e.target.value);
+  }
 
-
-  const Textarea = styled(BaseTextareaAutosize)(
-    ({ theme }) => `
-    width: 320px;
-    font-family: IBM Plex Sans, sans-serif;
-    font-size: 0.875rem;
-    font-weight: 400;
-    line-height: 1.5;
-    padding: 12px;
-    border-radius: 12px 12px 0 12px;
-    color: ${theme.palette.mode === 'dark' ? grey[300] : grey[900]};
-    background: ${theme.palette.mode === 'dark' ? grey[900] : '#fff'};
-    border: 1px solid ${theme.palette.mode === 'dark' ? grey[700] : grey[200]};
-    box-shadow: 0px 2px 2px ${theme.palette.mode === 'dark' ? grey[900] : grey[50]};
-    resize: none;
-
-    &:hover {
-      border-color: ${green[400]};
+  const handlePostSubmit = () => {
+    if (postText.trim() === '') {
+      console.log("El texto del post está vacío. No se enviará la solicitud.");
+      return;
     }
 
-    &:focus {
-      border-color: ${green[400]};
-      box-shadow: 0 0 0 3px ${theme.palette.mode === 'dark' ? green[500] : green[200]};
-    }
+    axios.post('http://localhost:8080/post/guardar', {
+      postTexto: postText,
+      // email: localStorage.getItem("email"),
+    })
+      .then((response) => {
+        console.log("Post del usuario enviados con éxito: ", response.data);
+      })
+      .catch((error) => {
+        console.log("Error al enviar datos: ", error);
+      });
+  }
 
-    // firefox
-    &:focus-visible {
-      outline: 0;
-    }
-  `,
-  );
 
   return (
-    <Textarea aria-label="minimum height" minRows={3} placeholder="Minimum 3 rows" />
+    <div>
+      <textarea
+        placeholder="Escribe tu post aquí"
+        value={postText}
+        onChange={handlePostTextChange}
+      />
+      <button onClick={handlePostSubmit}>Enviar Post</button>
+    </div>
   );
 }
