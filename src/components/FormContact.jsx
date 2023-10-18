@@ -1,4 +1,5 @@
 import  { useState } from 'react';
+import animacion from '../assets/envioFormulario.gif'
 
 export function FormContact() {
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
@@ -15,7 +16,7 @@ export function FormContact() {
     <div>
       {isFormSubmitted ? (
         <div className="success-message">
-           
+           <img src={animacion} alt="formulario enviado"></img>
 
           <h2 className="formEnviado">Tu formulario fue enviado con éxito.</h2>
         </div>
