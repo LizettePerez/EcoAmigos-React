@@ -12,7 +12,7 @@ function Eventos() {
             <p>¡Únete a la comunidad EcoAmigos y sé parte del cambio!<br /> Te invitamos a participar en nuestro emocionante
               evento de limpieza de playa en Valparaíso, Chile.</p>
             <div className="eventDate">
-              <p><span className="green">Fecha:</span> Sábado, 15 de Abril de 2023<br />
+              <p><span className="green">Fecha:</span> Martes, 5 de Marzo de 2024<br />
                 <span className="green">Hora:</span> 9:00 AM - 12:00 PM<br />
                 <span className="green">Lugar:</span> Playa de Valparaíso (Punto de encuentro: [Ubicación exacta])
               </p>

@@ -1,38 +1,24 @@
-import { useState } from "react";
-import { styled } from "@mui/material/styles";
+import { useState, useEffect } from 'react';
 import Card from "@mui/material/Card";
 import CardHeader from "@mui/material/CardHeader";
 import CardContent from "@mui/material/CardContent";
 import CardActions from "@mui/material/CardActions";
-import Collapse from "@mui/material/Collapse";
 import Avatar from "@mui/material/Avatar";
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
-import FavoriteIcon from "@mui/icons-material/Favorite";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import FavoriteIcon from '@mui/icons-material/Favorite';
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import Popover from "@mui/material/Popover";
 import Button from "@mui/material/Button";
 import PropTypes from "prop-types";
-
-const ExpandMore = styled((props) => {
-  const { expand, ...other } = props;
-  return <IconButton {...other} />;
-})(({ theme, expand }) => ({
-  transform: !expand ? "rotate(0deg)" : "rotate(180deg)",
-  marginLeft: "auto",
-  transition: theme.transitions.create("transform", {
-    duration: theme.transitions.duration.shortest,
-  }),
-}));
+import axios from "axios";
+import EditIcon from '@mui/icons-material/Edit';
+import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 
 export default function RecipeReviewCard() {
-  const [expanded, setExpanded] = useState(false);
   const [anchorEl, setAnchorEl] = useState(null);
-
-  const handleExpandClick = () => {
-    setExpanded(!expanded);
-  };
+  const [posts, setPosts] = useState([]);
 
   const handleMenuClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -42,54 +28,56 @@ export default function RecipeReviewCard() {
     setAnchorEl(null);
   };
 
+
+  useEffect(() => {
+    axios.get('http://localhost:8080/post/lista')
+      .then((response) => {
+        setPosts(response.data);
+      })
+      .catch((error) => {
+        console.error("Error al cargar los posts:", error);
+      });
+  }, [setPosts]);
+
+
   return (
-    <div>
-      <Card sx={{ maxWidth: 345 }}>
-        <CardHeader
-          avatar={
-            <Avatar
-              alt="avatar"
-              src={localStorage.getItem("profilePic")}
-              aria-label="recipe"
-            ></Avatar>
-          }
-          action={
-            <div>
-              <IconButton aria-label="settings" onClick={handleMenuClick}>
-                <MoreVertIcon />
-              </IconButton>
-            </div>
-          }
-          subheader="September 14, 2016"
-          title={localStorage.getItem("name")}
-        />
-        <CardContent>
-          <Typography variant="body2" color="text.secondary">
-            This impressive paella is a perfect party dish and a fun meal to
-            cook together with your guests. Add 1 cup of frozen peas along with
-            the mussels, if you like.
-          </Typography>
-        </CardContent>
-        <CardActions disableSpacing>
-          <IconButton aria-label="add to favorites">
-            <FavoriteIcon />
-          </IconButton>
-          <ExpandMore
-            expand={expanded}
-            onClick={handleExpandClick}
-            aria-expanded={expanded}
-            aria-label="show more"
-          >
-            <ExpandMoreIcon />
-          </ExpandMore>
-        </CardActions>
-        <Collapse in={expanded} timeout="auto" unmountOnExit>
+    <div className='postContainer'>
+      {posts.map(post => (
+        <Card key={post.id} sx={{ maxWidth: 345, borderRadius: 5 }} className='cardContainer'>
+          <CardHeader
+            avatar={
+              <Avatar
+                alt="avatar"
+                src={localStorage.getItem("profilePic")}
+                aria-label="recipe"
+              ></Avatar>
+            }
+            action={
+              <div>
+                <IconButton aria-label="settings" onClick={handleMenuClick}>
+                  <MoreVertIcon />
+                </IconButton>
+              </div>
+            }
+            subheader={
+              <Typography variant="body2">
+                {post.postFechaCreado}
+              </Typography>
+            }
+            title={localStorage.getItem("name")}
+          />
           <CardContent>
-            <Typography paragraph>Method:</Typography>
-            {/* Resto del contenido */}
+            <Typography variant="body2" color="text.secondary">
+              {post.postTexto}
+            </Typography>
           </CardContent>
-        </Collapse>
-      </Card>
+          <CardActions disableSpacing>
+            <IconButton aria-label="add to favorites">
+              <FavoriteBorderIcon />
+            </IconButton>
+          </CardActions>
+        </Card>
+      ))}
       <Popover
         open={Boolean(anchorEl)}
         anchorEl={anchorEl}
@@ -112,16 +100,17 @@ export default function RecipeReviewCard() {
           }}
         >
           <Button
-            style={{ display: "flex", justifyContent: "flex-start" }}
+            style={{ display: "flex", justifyContent: "flex-start", textTransform: "none", color: '#1b5e20' }}
             onClick={handleCloseMenu}
-          >
-            Borrar
+          ><EditIcon sx={{ fontSize: 18, margin: '0 2px 0 0', color: '#1b5e20' }} />
+            Editar
           </Button>
           <Button
-            style={{ display: "flex", justifyContent: "flex-start" }}
+            style={{ display: "flex", justifyContent: "flex-start", textTransform: "none", color: '#1b5e20' }}
             onClick={handleCloseMenu}
-          >
-            Editar
+          ><DeleteForeverIcon sx={{ fontSize: 18, margin: '0 2px 0 0', color: '#1b5e20' }} />Borrar
+
+
           </Button>
         </div>
       </Popover>

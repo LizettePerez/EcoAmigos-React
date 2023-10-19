@@ -14,9 +14,12 @@ export default function Text() {
       return;
     }
 
+    const userEmail = localStorage.getItem("email");
+    console.log("Email del usuario:", userEmail);
+
     axios.post('http://localhost:8080/post/guardar', {
       postTexto: postText,
-      // email: localStorage.getItem("email"),
+      usuario: localStorage.getItem("email")
     })
       .then((response) => {
         console.log("Post del usuario enviados con éxito: ", response.data);
@@ -28,13 +31,13 @@ export default function Text() {
 
 
   return (
-    <div>
+    <div className='post'>
       <textarea
         placeholder="Escribe tu post aquí"
         value={postText}
         onChange={handlePostTextChange}
       />
-      <button onClick={handlePostSubmit}>Enviar Post</button>
+      <button onClick={handlePostSubmit} className="communityBtn">Publicar</button>
     </div>
   );
 }
