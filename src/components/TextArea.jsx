@@ -28,13 +28,13 @@ export default function Text() {
 
 
   return (
-    <div>
+    <div className='post'>
       <textarea
         placeholder="Escribe tu post aquí"
         value={postText}
         onChange={handlePostTextChange}
       />
-      <button onClick={handlePostSubmit}>Enviar Post</button>
+      <button onClick={handlePostSubmit} className="communityBtn">Publicar</button>
     </div>
   );
 }

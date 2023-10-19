@@ -66,7 +66,7 @@ p {
   display: inline-block;
   padding: 10px 20px;
   border-radius: 10px;
-  margin: 20px 0;
+  margin: 20px 0 10px 0;
   background-color: #055612;
   color: #f4f4f4;
   font-weight: 600;
@@ -91,6 +91,8 @@ p {
   align-items: center;
   padding: 0 40px;
   margin: 40px 0;
+  align-items: center;
+  justify-content: center;
 }
 
 @media (max-width: 768px) {
@@ -385,16 +387,66 @@ body {
   justify-content: center;
 }
 
-.formEnviado{
+.formEnviado {
   font-size: 17px;
   font-weight: 700;
-  color:#055612; 
+  color: #055612;
 
 }
-.success-message{
+
+.success-message {
   display: flex;
   flex-direction: column;
-  align-items: center ;
+  align-items: center;
   justify-content: center;
-  
+
+}
+
+.post {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.post textarea {
+  width: 320px;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.5;
+  padding: 12px;
+  border-radius: 12px 12px 0 12px;
+  color: #6e7781;
+  background: #fff;
+  border: 1px solid #8c959f;
+  box-shadow: 0px 2px 2px #f6f8fa;
+  margin: 0 5px 0px 0;
+}
+
+.post textarea:hover {
+  border-color: #055612;
+}
+
+.post textarea:focus {
+  outline: none;
+  border: 2px solid #055612;
+}
+
+.cardPost {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.cardContainer {
+  margin: 20px 0;
+  width: 340px;
+  border-radius: 20px;
+}
+
+.postContainer {
+  margin: 40px 0;
+  max-height: 55vh;
+  overflow-y: auto;
 }

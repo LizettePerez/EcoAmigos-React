@@ -1,5 +1,4 @@
 import "../index.css";
-import PostHome from "../components/PostHome";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Publish from "../components/Publish";
@@ -15,11 +14,10 @@ function Comunidad() {
       return;
     }
     setToken(_token);
-  }, []);
+  }, [navigate]);
   return (
     <div>
-      <Publish />
-      {token && <PostHome />}
+      {token && <Publish />}
     </div>
   );
 }
