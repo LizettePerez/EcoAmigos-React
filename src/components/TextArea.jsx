@@ -14,9 +14,10 @@ export default function Text() {
       return;
     }
 
+
     axios.post('http://localhost:8080/post/guardar', {
       postTexto: postText,
-      // email: localStorage.getItem("email"),
+      usuario: localStorage.getItem("email"),
     })
       .then((response) => {
         console.log("Post del usuario enviados con éxito: ", response.data);
