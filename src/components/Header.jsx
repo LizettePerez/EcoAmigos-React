@@ -56,11 +56,6 @@ export default function Example() {
             Contacto
           </NavLink>
         </Popover.Group>
-        <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <NavLink to="/comunidad" className="text-m leading-6 ">
-            Iniciar Sesión <span aria-hidden="true">&rarr;</span>
-          </NavLink>
-        </div>
       </nav>
       <Dialog
         as="div"
@@ -104,14 +99,6 @@ export default function Example() {
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-sm leading-6 custom-a"
                 >
                   Contacto
-                </NavLink>
-              </div>
-              <div className="py-6">
-                <NavLink
-                  to="/comunidad"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-sm leading-6 custom-a"
-                >
-                  Iniciar Sesión
                 </NavLink>
               </div>
             </div>
